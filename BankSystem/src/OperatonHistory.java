@@ -24,14 +24,14 @@ public class OperatonHistory {
     }
 
     public String toString(){
-        String formatted = "";
+        StringBuilder formatted = new StringBuilder();
 
-        formatted += String.format("%-15s%-12s%-12s\t%s\n", "Operation", "Amount", "Balance", "Date");
+        formatted.append(String.format("%-15s%-12s%-12s\t%s\n", "Operation", "Amount", "Balance", "Date"));
 
         for (Operation op : operations) {
-            formatted += op.toString() + "\n";
+            formatted.append(op.toString()).append("\n");
         }
 
-        return formatted;
+        return formatted.toString();
     }
 }
